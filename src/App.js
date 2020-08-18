@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styled, { ThemeProvider } from 'styled-components';
+
 import Article from './components/Article'
 
+import theme from './Theme'
 
 
 
@@ -20,12 +23,14 @@ function App() {
     })
   }, [])
   return (
-    <div className="App">
-      {articles.map(article => {
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        {articles.map(article => {
 
-        return <Article key={article.title} info={article} />
-      })}
-    </div>
+          return <Article key={article.title} info={article} />
+        })}
+      </div>
+    </ThemeProvider>
   );
 }
 
