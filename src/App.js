@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Article from './components/Article'
+
+
+
 
 function App() {
+  const [articles, setArticles] = useState([]);
+  useEffect(() => {
+    axios.get('https://newsapi.org/v2/top-headlines?country=us',
+      {
+        headers: {
+          'X-Api-Key': process.env.REACT_APP_API_KEY
+        }
+      }
+
+    ).then(res => {
+      setArticles(res.data.articles)
+    })
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {articles.map(article => {
+
+        return <Article key={article.title} info={article} />
+      })}
     </div>
   );
 }
