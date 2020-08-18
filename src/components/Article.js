@@ -3,11 +3,12 @@ import styled from 'styled-components'
 
 
 const StyledArticle = styled.div`
-  width: 30%;
+  width: 28%;
+  min-height:45vh;
   margin: 1rem;
   background-color: #FFFAF1;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
   border-radius: 15px 15px 0 0;
@@ -19,6 +20,7 @@ const StyledArticle = styled.div`
   }
   img {
     width: 100%;
+    height: 38%;
     border-radius: 15px 15px 0 0;
   }
   h1 {
@@ -41,19 +43,20 @@ const StyledArticle = styled.div`
     color: black;
     text-decoration: none;
 
+
     &:hover {
       color: red;
     }
   }
 
   .cardBtm{
+    width: 100%;
     padding: 0.8rem;
   }
 `;
 
 function Article(props) {
   const { author, title, description, url, urlToImage } = props.info;
-  console.log(props)
   return (
     <StyledArticle>
       <img src={urlToImage} alt="" />
