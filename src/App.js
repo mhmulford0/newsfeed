@@ -15,7 +15,8 @@ function App() {
       {
         headers: {
           'X-Api-Key': process.env.REACT_APP_API_KEY,
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS'
         }
       }
 
