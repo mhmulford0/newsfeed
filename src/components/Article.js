@@ -3,14 +3,29 @@ import styled from 'styled-components'
 
 
 const StyledArticle = styled.div`
-  display: flex;
-  flex-flow: row wrap;
   width: 30%;
+  margin: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
   img {
     width: 350px;
+    margin: 0 0 0.5rem 0;
   }
   h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  a {
+    font-size: 1.1rem;
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: red;
+    }
   }
 `;
 

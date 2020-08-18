@@ -54,3 +54,9 @@ table {
 body{
 	font-size: 62.5%;
 }
+
+.App {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100vw;
+}

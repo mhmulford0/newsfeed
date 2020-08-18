@@ -11,7 +11,7 @@ import theme from './Theme'
 function App() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    axios.get('https://newsapi.org/v2/top-headlines?country=us',
+    axios.get('https://newsapi.org/v2/top-headlines?country=ca',
       {
         headers: {
           'X-Api-Key': process.env.REACT_APP_API_KEY
