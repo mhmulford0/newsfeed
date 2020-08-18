@@ -11,7 +11,7 @@ import theme from './Theme'
 function App() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    axios.get('https://newsapi.org/v2/top-headlines?country=ca',
+    axios.get('https://newsapi.org/v2/top-headlines?country=us',
       {
         headers: {
           'X-Api-Key': process.env.REACT_APP_API_KEY
@@ -25,8 +25,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        <h1>Headlines of the Day</h1>
         {articles.map(article => {
-
           return <Article key={article.title} info={article} />
         })}
       </div>

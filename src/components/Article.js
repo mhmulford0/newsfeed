@@ -5,18 +5,36 @@ import styled from 'styled-components'
 const StyledArticle = styled.div`
   width: 30%;
   margin: 1rem;
-  border: 1px solid black;
-  padding: 1rem;
+  background-color: #FFFAF1;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s ease-in;
+  &:hover {
+    transition: box-shadow 0.2s ease-out;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
   img {
-    width: 350px;
-    margin: 0 0 0.5rem 0;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 1.3rem;
     margin: 0 0 1rem 0;
+    text-align: left;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400; 
   }
   p {
     font-size: 0.9rem;
+    margin: 1rem 0;
   }
   a {
     font-size: 1.1rem;
@@ -27,6 +45,10 @@ const StyledArticle = styled.div`
       color: red;
     }
   }
+
+  .cardBtm{
+    padding: 0.8rem;
+  }
 `;
 
 function Article(props) {
@@ -34,11 +56,13 @@ function Article(props) {
   console.log(props)
   return (
     <StyledArticle>
-      <h1>{title}</h1>
       <img src={urlToImage} alt="" />
-      <h2>{author}</h2>
-      <p>{description}</p>
-      <a href={url}>Full Article</a>
+      <div className="cardBtm">
+        <h1>{title}</h1>
+        <h2>By: {author}</h2>
+        <p>{description}</p>
+        <a href={url}>Full Article</a>
+      </div>
     </StyledArticle>
   )
 }
