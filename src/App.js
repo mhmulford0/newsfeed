@@ -14,7 +14,8 @@ function App() {
     axios.get('https://newsapi.org/v2/top-headlines?country=us',
       {
         headers: {
-          'X-Api-Key': process.env.REACT_APP_API_KEY
+          'X-Api-Key': process.env.REACT_APP_API_KEY,
+          'Access-Control-Allow-Origin': '*'
         }
       }
 
